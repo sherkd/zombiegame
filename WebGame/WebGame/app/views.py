@@ -44,3 +44,68 @@ def about(request):
             'year':datetime.now().year,
         }
     )
+
+def shop(request):
+    """Renders the shop page."""
+    assert isinstance(request, HttpRequest)
+    return render(
+        request,
+        'app/shop.html',
+        {
+            'title':'Shop',
+            'message':'This page is a blank template.',
+            'year':datetime.now().year,
+        }
+    )
+
+def bank(request):
+    """Renders the bank page."""
+    assert isinstance(request, HttpRequest)
+    return render(
+        request,
+        'app/bank.html',
+        {
+            'title':'Bank',
+            'message':'This page is a blank template.',
+            'year':datetime.now().year,
+        }
+    )
+
+def recovery(request):
+    """Renders the recovery page."""
+    assert isinstance(request, HttpRequest)
+    return render(
+        request,
+        'app/recovery.html',
+        {
+            'title':'Health Recovery',
+            'message':'This page is a blank template.',
+            'year':datetime.now().year,
+        }
+    )
+
+def fight(request):
+    """Renders the fight page."""
+    assert isinstance(request, HttpRequest)
+    return render(
+        request,
+        'app/fight.html',
+        {
+            'title':'1v1 Fight',
+            'message':'This page is a blank template.',
+            'year':datetime.now().year,
+        }
+    )
+
+def quest(request):
+    """Renders the quest page."""
+    assert isinstance(request, HttpRequest)
+    return render(
+        request,
+        'app/quest.html',
+        {
+            'title':'Quest',
+            'message':'This page is a blank template.',
+            'year':datetime.now().year,
+        }
+    )
