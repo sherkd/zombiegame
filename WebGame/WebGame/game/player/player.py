@@ -1,13 +1,4 @@
-class Player():    
-    username
-    health
-    attackDamage
-    cooldowns
-    money
-    items
-    level
-    experience
-    
+class Player():  
     def __init__(self, username, health, attack, defence, cooldowns, money, items, level, experience):
         self.username = username
         self.health = health
