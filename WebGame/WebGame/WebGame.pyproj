@@ -73,6 +73,11 @@
     <Folder Include="WebGame\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\templates\app\recovery.html" />
+    <Content Include="app\templates\app\fight.html" />
+    <Content Include="app\templates\app\quest.html" />
+    <Content Include="app\templates\app\bank.html" />
+    <Content Include="app\templates\app\shop.html" />
     <Content Include="requirements.txt" />
     <Content Include="db.sqlite3" />
     <Content Include="app\static\app\content\bootstrap.css" />

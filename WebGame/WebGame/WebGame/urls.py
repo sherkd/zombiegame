@@ -19,6 +19,11 @@ urlpatterns = [
     url(r'^$', app.views.home, name='home'),
     url(r'^contact$', app.views.contact, name='contact'),
     url(r'^about', app.views.about, name='about'),
+    url(r'^shop', app.views.shop, name='shop'),
+    url(r'^bank', app.views.bank, name='bank'),
+    url(r'^recovery', app.views.recovery, name='recovery'),
+    url(r'^fight', app.views.fight, name='fight'),
+    url(r'^quest', app.views.quest, name='quest'),
     url(r'^login/$',
         django.contrib.auth.views.login,
         {
