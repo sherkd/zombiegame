@@ -13,7 +13,7 @@
     <ProjectGuid>3d02b7db-9abe-4dcd-9df8-472e88ecb84f</ProjectGuid>
     <ProjectHome>.</ProjectHome>
     <ProjectTypeGuids>{5F0BE9CA-D677-4A4D-8806-6076C0FAAD37};{349c5851-65df-11da-9384-00065b846f21};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
-    <StartupFile>manage.py</StartupFile>
+    <StartupFile>game\database\database.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -36,6 +36,9 @@
     <Compile Include="app\__init__.py" />
     <Compile Include="app\migrations\__init__.py" />
     <Compile Include="game\cooldown.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="game\database\database.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="game\levels\scoutlevel.py">
