@@ -35,6 +35,9 @@
     <Compile Include="app\views.py" />
     <Compile Include="app\__init__.py" />
     <Compile Include="app\migrations\__init__.py" />
+    <Compile Include="game\player\player.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="manage.py" />
     <Compile Include="WebGame\__init__.py" />
     <Compile Include="WebGame\settings.py" />
@@ -51,6 +54,10 @@
     <Folder Include="app\static\app\scripts\" />
     <Folder Include="app\templates\" />
     <Folder Include="app\templates\app\" />
+    <Folder Include="game\" />
+    <Folder Include="game\database\" />
+    <Folder Include="game\levels\" />
+    <Folder Include="game\player\" />
     <Folder Include="WebGame\" />
   </ItemGroup>
   <ItemGroup>
