@@ -1,16 +1,20 @@
-class Cooldown():
+class Cooldown(object):
+
     def __init__(self, cooldownType, seconds):
         self.cooldownType = cooldownType
         self.seconds = seconds
 
-    def getCooldownType():
-        return cooldownType
+    def getCooldownType(self):
+        return self.cooldownType
 
-    def getSeconds():
-        return seconds
+    def getSeconds(self):
+        return self.seconds
 
-    def lowerSeconds():
+    def lowerSeconds(self):
         self.seconds -= 1
+
+    def setSeconds(self, sec):
+        self.seconds = sec
 
   
 

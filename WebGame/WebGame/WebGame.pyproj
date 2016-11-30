@@ -38,7 +38,16 @@
     <Compile Include="game\cooldown.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="game\levels\scoutlevel.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="game\player\enemy.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="game\player\player.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="game\player\weapon.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="manage.py" />

@@ -1,4 +1,5 @@
-class Player():  
+class Player(object):
+
     def __init__(self, username, health, attack, defence, cooldowns, money, items, level, experience):
         self.username = username
         self.health = health
@@ -10,61 +11,64 @@ class Player():
         self.level = level
         self.experience = experience
 
-    def getUserName():
-        return username
+    def getUserName(self):
+        return self.username
 
-    def getHealth():
-        return health
+    def getHealth(self):
+        return self.health
 
-    def setHealth(health):
+    def setHealth(self, health):
         self.health = health
 
-    def getAttackDamage():
-        return attackDamage
+    def getAttackDamage(self):
+        return self.attackDamage
 
-    def setAttackDamage(damage):
+    def setAttackDamage(self, damage):
         self.attackDamage = damage
         
-    def getCooldowns():
-        return cooldowns
+    def getCooldowns(self):
+        return self.cooldowns
 
-    def removeCooldown(cooldown):
-        del self.cooldown[cooldown]
+    def removeCooldown(self, cooldown):
+        self.cooldowns.remove(cooldown)
 
-    def getMoney():
-        return money
+    def addCooldown(self, cooldown):
+        self.cooldowns.append(cooldown)
 
-    def setMoney(money):
+    def getMoney(self):
+        return self.money
+
+    def setMoney(self, money):
         self.money = money
 
-    def getItems():
-        return items
+    def getItems(self):
+        return self.items
 
-    def removeItem(item):
+    def removeItem(self, item):
         self.items.remove(item)
 
-    def addItem(item):
+    def addItem(self, item):
         self.items.append(item)     
 
-    def getLevel():
+    def getLevel(self):
         return self.level;
 
-    def increaseLevel():
+    def increaseLevel(self):
         self.level += 1
 
-    def getExperience():
+    def getExperience(self):
         return self.experience
 
-    def setExperience(exp):
+    def setExperience(self, exp):
         self.experience = exp
 
-    def getRequiredExp():
+    def getRequiredExp(self):
         return self.level * 140
 
-    def checkLevelUp():
-        if self.experience >= getRequiredExp:
-            increaseLevel()
-            setExperience(getRequiredExp - self.experience)
+    def checkLevelUp(self):
+        if self.experience >= getRequiredExp():
+            self.increaseLevel()
+            self.setExperience(self.getRequiredExp() - self.experience)
             return True
         return False
 
