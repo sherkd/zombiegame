@@ -13,7 +13,7 @@
     <ProjectGuid>3d02b7db-9abe-4dcd-9df8-472e88ecb84f</ProjectGuid>
     <ProjectHome>.</ProjectHome>
     <ProjectTypeGuids>{5F0BE9CA-D677-4A4D-8806-6076C0FAAD37};{349c5851-65df-11da-9384-00065b846f21};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
-    <StartupFile>game\database\database.py</StartupFile>
+    <StartupFile>manage.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -35,24 +35,13 @@
     <Compile Include="app\views.py" />
     <Compile Include="app\__init__.py" />
     <Compile Include="app\migrations\__init__.py" />
-    <Compile Include="game\cooldown.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="game\database\database.py">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="game\classes\cooldown.py" />
     <Compile Include="game\levels\scoutlevel.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="game\player\enemy.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="game\player\player.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="game\player\weapon.py">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="game\classes\enemy.py" />
+    <Compile Include="game\classes\player.py" />
+    <Compile Include="game\classes\weapon.py" />
     <Compile Include="manage.py" />
     <Compile Include="WebGame\__init__.py" />
     <Compile Include="WebGame\settings.py" />
@@ -72,10 +61,15 @@
     <Folder Include="game\" />
     <Folder Include="game\database\" />
     <Folder Include="game\levels\" />
-    <Folder Include="game\player\" />
+    <Folder Include="game\classes\" />
     <Folder Include="WebGame\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\templates\app\recovery.html" />
+    <Content Include="app\templates\app\fight.html" />
+    <Content Include="app\templates\app\quest.html" />
+    <Content Include="app\templates\app\bank.html" />
+    <Content Include="app\templates\app\shop.html" />
     <Content Include="requirements.txt" />
     <Content Include="db.sqlite3" />
     <Content Include="app\static\app\content\bootstrap.css" />
