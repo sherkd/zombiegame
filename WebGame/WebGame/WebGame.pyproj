@@ -36,7 +36,8 @@
     <Compile Include="app\__init__.py" />
     <Compile Include="app\migrations\__init__.py" />
     <Compile Include="game\classes\cooldown.py" />
-    <Compile Include="game\database\class1.py">
+    <Compile Include="game\classes\classtest.py" />
+    <Compile Include="game\database\db.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="game\levels\searchlevel.py">
@@ -103,11 +104,6 @@
     <Content Include="app\templates\app\layout.html" />
     <Content Include="app\templates\app\login.html" />
     <Content Include="app\templates\app\loginpartial.html" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="readme.mht">
-      <SubType>WebBrowser</SubType>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <InterpreterReference Include="{2af0f10d-7135-4994-9156-5d01c9c11b7e}\3.5" />

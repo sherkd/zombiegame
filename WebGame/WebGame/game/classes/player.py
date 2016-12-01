@@ -1,10 +1,9 @@
 class Player(object):
 
-    def __init__(self, username, health, attack, defence, cooldowns, money, items, level, experience):
+    def __init__(self, username, health, attack, cooldowns, money, items, level, experience):
         self.username = username
         self.health = health
         self.attack = attack
-        self.defence = defence
         self.cooldowns = cooldowns
         self.money = money
         self.items = items
@@ -21,11 +20,11 @@ class Player(object):
         self.health = health
 
     def getAttackDamage(self):
-        return self.attackDamage
+        return self.attack
 
     def setAttackDamage(self, damage):
-        self.attackDamage = damage
-        
+        self.attack = damage
+       
     def getCooldowns(self):
         return self.cooldowns
 

@@ -1,5 +1,5 @@
 ﻿class Database(object):
-    """description of class"""
+
     def __init__(self):
         self.db = pymysql.connect(host="104.219.248.113 ",    # your host, usually localhost
                          user="amatfbgg_infdev6",         # your username
