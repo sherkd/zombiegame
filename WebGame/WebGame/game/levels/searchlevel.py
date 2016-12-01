@@ -1,6 +1,6 @@
 import random
 
-class ScoutLevel(object):
+class SearchLevel(object):
     
     def __init__(self, player, seconds):
         self.player = player

@@ -36,7 +36,7 @@
     <Compile Include="app\__init__.py" />
     <Compile Include="app\migrations\__init__.py" />
     <Compile Include="game\classes\cooldown.py" />
-    <Compile Include="game\levels\scoutlevel.py">
+    <Compile Include="game\levels\searchlevel.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="game\classes\enemy.py" />
