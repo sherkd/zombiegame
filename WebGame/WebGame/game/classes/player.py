@@ -1,3 +1,5 @@
+from django.test import TestCase
+
 class Player(object):
 
     def __init__(self, username, health, attack, cooldowns, money, items, level, experience):
@@ -65,11 +67,56 @@ class Player(object):
         return self.level * 140
 
     def checkLevelUp(self):
-        if self.experience >= getRequiredExp():
+        if self.experience >= self.getRequiredExp():
             self.increaseLevel()
             self.setExperience(self.getRequiredExp() - self.experience)
             return True
         return False
+
+
+    
+class ClassTest(TestCase):  
+    
+    def testPlayer(self):      
+        player = Player("P", 100, 10, ["cooldown1", "cooldown2"], 100, ["item1", "item2"], 10, 20)
+        self.assertEquals("P", player.getUserName())
+
+        self.assertEquals(100, player.getHealth())
+        player.setHealth(50)
+        self.assertEquals(50, player.getHealth())       
+
+        self.assertEquals(10, player.getAttackDamage())
+        player.setAttackDamage(12)
+        self.assertEquals(12, player.getAttackDamage())
+
+        self.assertEquals(["cooldown1", "cooldown2"], player.getCooldowns())
+        player.addCooldown("cooldown3")
+        self.assertEquals(["cooldown1", "cooldown2", "cooldown3"],  player.getCooldowns())
+        player.removeCooldown("cooldown2")
+        self.assertEquals(["cooldown1", "cooldown3"],  player.getCooldowns())
+
+        self.assertEquals(100, player.getMoney()) 
+        player.setMoney(50)
+        self.assertEquals(50, player.getMoney()) 
+
+        self.assertEquals(["item1", "item2"], player.getItems())
+        player.addItem("item3")
+        self.assertEquals(["item1", "item2", "item3"], player.getItems())
+        player.removeItem("item3") 
+        self.assertEquals(["item1", "item2"], player.getItems())
+
+        self.assertEquals(10, player.getLevel())
+        player.increaseLevel()
+        self.assertEquals(11, player.getLevel())
+
+        self.assertEquals(20, player.getExperience())
+        player.setExperience(player.getRequiredExp() + 10)
+        self.assertEquals(player.getRequiredExp() + 10, player.getExperience())
+        self.assertEquals(True, player.checkLevelUp())
+        self.assertEquals(12, player.getLevel())
+        self.assertEquals(130, player.getExperience())
+
+     
 
         
 

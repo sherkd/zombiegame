@@ -1,4 +1,6 @@
-﻿class Database(object):
+﻿from django.test import TestCase
+
+class Database(object):
 
     def __init__(self):
         self.db = pymysql.connect(host="104.219.248.113 ",    # your host, usually localhost
@@ -11,3 +13,13 @@
     def connect(self):
         cur = db.cursor()
         return cur.execute("Create Table Users (id int(25))")
+
+class TestDatabase(TestCase):
+
+    def testDB(self):
+        db = Database()
+        con = pymysql.connect(host="104.219.248.113 ",    # your host, usually localhost
+                         user="amatfbgg_infdev6",         # your username
+                         passwd="DbX3xb6K#nyE",  # your password
+                         db="amatfbgg_infdev06b")        # name of the data base
+        self.assertAlmostEquals(con, db.getDB())

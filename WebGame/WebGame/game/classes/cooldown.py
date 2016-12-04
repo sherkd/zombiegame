@@ -1,3 +1,5 @@
+from django.test import TestCase
+
 class Cooldown(object):
 
     def __init__(self, cooldownType, seconds):
@@ -15,6 +17,22 @@ class Cooldown(object):
 
     def setSeconds(self, sec):
         self.seconds = sec
+
+
+class TestCooldown(TestCase):
+    
+    def testCooldown(self):
+        cl = Cooldown("search", 12)
+        self.assertEquals("search", cl.getCooldownType())
+        self.assertEquals(12, cl.getSeconds())
+        cl.lowerSeconds()
+        self.assertEquals(11, cl.getSeconds())
+        cl.setSeconds(12) 
+        self.assertEquals(12, cl.getSeconds())
+
+
+
+
 
   
 

@@ -1,11 +1,8 @@
+from django.test import TestCase
+from weapon import Weapon
+
 class Enemy(object):
     
-    def __init__(self, name, level, health, weapon):
-        self.name = name
-        self.level = level
-        self.health = health
-        self.weapon = weapon     
-
     def __init__(self, name, level, health, weapon, rewardItem):
         self.name = name
         self.level = level
@@ -33,4 +30,17 @@ class Enemy(object):
 
     def getRewardItem(self):
         return self.rewardItem
+
+class TestEnemy(TestCase):
+
+    def testEnemy(self):
+        en = Enemy("Henk", 3, 100, Weapon("Henk weapon", 5, 100), None)
+        self.assertEquals("Henk", en.getName())
+        self.assertEquals(3, en.getLevel())
+        self.assertEquals(100, en.getHealth())
+        self.assertEquals(None, en.getRewardItem())
+        self.assertEquals(en.getLevel() * 2.2, en.getRewardMoney())
+        self.assertEquals(en.getLevel() * 4.3, en.getRewardExp())
+
+       
 
