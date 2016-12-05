@@ -18,7 +18,7 @@ class shoplevel(object):
 
     def getweaponnameandprice(self):
         return self.weaponnames[0] + str(self.weaponprices[0])
-        return self.weaponnames[1] + str(self.weaponprices[1])
+
             
             
         
@@ -35,5 +35,5 @@ class TestShop(TestCase):
         self.assertEquals(["lasergun", "machinegun"], shop.getweaponnames())
         self.assertEquals([100, 200], shop.getweaponprice())
         shop.addweapon("balistic knife", 150)
-        self.assertEquals("lasergun"+"100", "machinegun"+"200", shop.getweaponnameandprice())
+        self.assertEquals("lasergun"+"100", shop.getweaponnameandprice())
         
