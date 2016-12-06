@@ -38,7 +38,7 @@
     <Compile Include="game\database\db.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="game\classes\bank.py">
+    <Compile Include="game\levels\banklevel.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="game\levels\searchlevel.py">

@@ -1,7 +1,7 @@
 from django.test import TestCase
 from game.classes.player import Player
 
-class Bank(object):
+class BankLevel(object):
     """description of bank."""
 
     def __init__(self, player):
@@ -28,8 +28,9 @@ class Bank(object):
 class TestBank(TestCase):
 
     def testBank(self):
-        bank = Bank(Player("name", 100, 10, ["cl"], 50, ["items"], 1, 20, 0))      
+        bank = BankLevel(Player("name", 100, 10, ["cl"], 50, ["items"], 1, 20, 0))      
         
         self.assertEquals(0, bank.player.getBalance())
         bank.depositMoney(10)
         self.assertEquals(40, bank.player.getMoney())
+        self.assertEquals(10, bank.player.getBalance())
