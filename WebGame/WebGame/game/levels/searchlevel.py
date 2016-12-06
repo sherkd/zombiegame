@@ -1,5 +1,6 @@
 import random
 from django.test import TestCase
+import time, threading
 
 class SearchLevel(object):
     
@@ -19,7 +20,8 @@ class SearchLevel(object):
         return self.seconds
 
     def startRunnable(self):
-        self.seconds -= 1       
+        self.seconds -= 1  
+        print(self.seconds)     
         if self.seconds == 0:
             self.player.removeCooldown("scouting")
             randomNum = random.randint(0, 100)
@@ -42,20 +44,21 @@ class SearchLevel(object):
                 #player found nothing
                 pass
         else:
-            pass
-            #TODO: start a runnable
-
+             threading.Timer(1, self.startRunnable).start()     
+             
 class TestSearch(TestCase):
 
+    def __init__(self, methodName = 'runTest'):
+        self.search = SearchLevel(Player("name", 100, 10, ["cl"], 50, ["items"], 1, 20), 10)
+        return super().__init__(methodName)
+    
     def testSearch(self):
-        search = SearchLevel(Player("name", 100, 10, ["cl"], 50, ["items"], 1, 20), 10)
-        self.assertEquals("name", search.getPlayer().getUserName())
-        search.startScouting()
-        self.assertEquals(["cl", "scouting"], search.getPlayer().getCooldowns())
-        self.assertEquals(9, search.getSeconds())
+        self.assertEquals("name", self.search.getPlayer().getUserName())
+        self.search.startScouting()
+        self.assertEquals(["cl", "scouting"], self.search.getPlayer().getCooldowns())
+        self.assertEquals(9, self.search.getSeconds())
 
-
-
+#Remove after testing, can't seem to fix the import.
 class Player(object):
 
     def __init__(self, username, health, attack, cooldowns, money, items, level, experience):
