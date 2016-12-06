@@ -1,4 +1,5 @@
 ﻿from django.test import TestCase
+import pymysql
 
 class Database(object):
 
@@ -11,15 +12,16 @@ class Database(object):
         return self.db
 
     def connect(self):
-        cur = db.cursor()
+        cur = self.db.cursor()
         return cur.execute("Create Table Users (id int(25))")
 
 class TestDatabase(TestCase):
 
     def testDB(self):
         db = Database()
+        """
         con = pymysql.connect(host="104.219.248.113 ",    # your host, usually localhost
                          user="amatfbgg_infdev6",         # your username
                          passwd="DbX3xb6K#nyE",  # your password
                          db="amatfbgg_infdev06b")        # name of the data base
-        self.assertAlmostEquals(con, db.getDB())
+        self.assertAlmostEquals(con, db.getDB()"""
