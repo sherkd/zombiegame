@@ -2,7 +2,7 @@ from django.test import TestCase
 
 class Player(object):
 
-    def __init__(self, username, health, attack, cooldowns, money, items, level, experience):
+    def __init__(self, username, health, attack, cooldowns, money, items, level, experience, balance):
         self.username = username
         self.health = health
         self.attack = attack
@@ -11,6 +11,7 @@ class Player(object):
         self.items = items
         self.level = level
         self.experience = experience
+        self.balance = balance
 
     def getUserName(self):
         return self.username
@@ -41,6 +42,12 @@ class Player(object):
 
     def setMoney(self, money):
         self.money = money
+
+    def getBalance(self):
+        return self.balance
+
+    def setBalance(self):
+        self.balance = balance
 
     def getItems(self):
         return self.items
