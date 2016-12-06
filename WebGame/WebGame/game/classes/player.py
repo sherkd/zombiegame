@@ -46,7 +46,7 @@ class Player(object):
     def getBalance(self):
         return self.balance
 
-    def setBalance(self):
+    def setBalance(self, balance):
         self.balance = balance
 
     def getItems(self):
@@ -122,6 +122,10 @@ class ClassTest(TestCase):
         self.assertEquals(True, player.checkLevelUp())
         self.assertEquals(12, player.getLevel())
         self.assertEquals(130, player.getExperience())
+
+        self.assertEquals(0, player.getBalance())
+        player.setBalance(10)
+        self.assertEquals(10, player.getBalance())
 
      
 
