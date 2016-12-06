@@ -2,7 +2,7 @@ from django.test import TestCase
 import player
 
 class Bank(object):
-    """description of class"""
+    """description of bank"""
 
     def __init__(self, player):
         self.player = player
