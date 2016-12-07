@@ -12,6 +12,5 @@
         self.player2.addCooldown("Battle")
         pass
 
-    def startRunnable(self):
 
 
