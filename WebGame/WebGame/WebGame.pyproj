@@ -41,6 +41,9 @@
     <Compile Include="game\levels\banklevel.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="game\levels\PlayerVsPlayerLevel.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="game\levels\searchlevel.py">
       <SubType>Code</SubType>
     </Compile>

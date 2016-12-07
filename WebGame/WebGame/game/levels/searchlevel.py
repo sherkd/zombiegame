@@ -1,4 +1,4 @@
-import random
+﻿import random
 from django.test import TestCase
 import time, threading
 from game.classes.player import Player
