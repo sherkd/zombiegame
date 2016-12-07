@@ -7,6 +7,7 @@
     def getPlayer(self):
         return self.player
 
+
     def startBattle(self):
         self.player.addCooldown("Battle")
         self.player2.addCooldown("Battle")
