@@ -30,12 +30,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="app\forms.py" />
-    <Compile Include="app\models.py" />
     <Compile Include="app\tests.py" />
     <Compile Include="app\views.py" />
-    <Compile Include="app\__init__.py" />
-    <Compile Include="app\migrations\__init__.py" />
     <Compile Include="game\database\db.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="game\database\postgres.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="game\levels\banklevel.py">
@@ -51,14 +51,12 @@
     <Compile Include="game\classes\player.py" />
     <Compile Include="game\classes\weapon.py" />
     <Compile Include="manage.py" />
-    <Compile Include="WebGame\__init__.py" />
     <Compile Include="WebGame\settings.py" />
     <Compile Include="WebGame\urls.py" />
     <Compile Include="WebGame\wsgi.py" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app\" />
-    <Folder Include="app\migrations\" />
     <Folder Include="app\static\" />
     <Folder Include="app\static\app\" />
     <Folder Include="app\static\app\content\" />

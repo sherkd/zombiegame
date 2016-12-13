@@ -28,7 +28,7 @@ class BankLevel(object):
 class TestBank(TestCase):
 
     def testBank(self):
-        bank = BankLevel(Player("name", 100, 10, ["cl"], 50, ["items"], 1, 20, 0))      
+        bank = BankLevel(Player("name", 100, 10, ["cl"], 50, ["items"], 1, 20, 0, 0))      
         
         self.assertEquals(0, bank.player.getBalance())
         bank.depositMoney(10)
