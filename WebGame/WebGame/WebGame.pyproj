@@ -51,6 +51,9 @@
     <Compile Include="game\classes\enemy.py" />
     <Compile Include="game\classes\player.py" />
     <Compile Include="game\classes\weapon.py" />
+    <Compile Include="game\levels\tournament.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="manage.py" />
     <Compile Include="WebGame\settings.py" />
     <Compile Include="WebGame\urls.py" />
