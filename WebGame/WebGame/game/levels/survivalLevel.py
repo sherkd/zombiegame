@@ -1,6 +1,6 @@
 from django.test import TestCase
 from game.classes.player import Player
-from game.classes.player import Enemy
+from game.classes.enemy import Enemy
 
 class Survival(object):
     """description of bank."""
@@ -8,7 +8,6 @@ class Survival(object):
     def __init__(self, player, wavecounter):
         self.player = player
         self.wavecounter = wavecounter
-        self.enemy = enemy
 
     def getPlayer(self):
         return self.player
@@ -43,6 +42,6 @@ class TestSurvival(TestCase):
 
     def testSurvival(self):
         #Player(username, health, attack, cooldowns, money, items, weapons, level, experience, balance)
-        surv = Survival(Player("name", 100, 10, ["cl"], 50, ["items"], 1, 20, 0, 0))
+        surv = Survival(Player("name", 100, 10, ["cl"], 50, ["items"], 1, 20, 0, 0),1)
         #Enemy(name, level, health, weapon, rewardItem)
-        en = Enemy("Henk", 3, 100, Weapon("Henk weapon", 5, 100), None)
+        #en = Enemy("Henk", 3, 100, Weapon("Henk weapon", 5, 100), None)
