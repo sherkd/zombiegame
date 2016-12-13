@@ -1,4 +1,7 @@
-﻿class PlayerVsPlayerLevel(object):
+﻿from game.classes.player import Player
+
+
+class PlayerVsPlayerLevel(object):
     """description of class"""
     def __init__(self, player, player2):
         self.player = player
@@ -7,10 +10,14 @@
     def getPlayer(self):
         return self.player
 
+    def getPlayer2(self):
+        return self.player2
 
     def startBattle(self):
         self.player.addCooldown("Battle")
-        self.player2.addCooldown("Battle")
+        while len(self.player.getCooldowns()) == 1:
+            if self.player.health <= 0 or self.player2.health <= 0:
+                self.player.removeCooldown("Battle")
         pass
 
 
