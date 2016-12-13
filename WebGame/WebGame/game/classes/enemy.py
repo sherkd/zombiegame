@@ -19,6 +19,9 @@ class Enemy(object):
     def getHealth(self):
         return self.health
 
+    def setHealth(self, health):
+        self.health = health
+
     def getWeapon(self):
         return self.weapon
 

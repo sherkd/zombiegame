@@ -2,13 +2,14 @@ from django.test import TestCase
 
 class Player(object):
 
-    def __init__(self, username, health, attack, cooldowns, money, items, level, experience, balance):
+    def __init__(self, username, health, attack, cooldowns, money, items, weapons, level, experience, balance):
         self.username = username
         self.health = health
         self.attack = attack
         self.cooldowns = cooldowns
         self.money = money
         self.items = items
+        self.weapons = weapons; 
         self.level = level
         self.experience = experience
         self.balance = balance
@@ -55,6 +56,15 @@ class Player(object):
     def removeItem(self, item):
         self.items.remove(item)
 
+    def getWeapons(self):
+        return self.weapons
+
+    def removeWeapon(self, weapon):
+        self.weapons.remove(weapon)
+
+    def addWeapon(self, weapon):
+        self.weapons.append(weapon)
+
     def addItem(self, item):
         self.items.append(item)     
 
@@ -85,7 +95,7 @@ class Player(object):
 class ClassTest(TestCase):  
     
     def testPlayer(self):      
-        player = Player("P", 100, 10, ["cooldown1", "cooldown2"], 100, ["item1", "item2"], 10, 20, 0)
+        player = Player("P", 100, 10, ["cooldown1", "cooldown2"], 100, ["item1", "item2"], 10, 10, 0, 0)
         self.assertEquals("P", player.getUserName())
 
         self.assertEquals(100, player.getHealth())
@@ -116,7 +126,7 @@ class ClassTest(TestCase):
         player.increaseLevel()
         self.assertEquals(11, player.getLevel())
 
-        self.assertEquals(20, player.getExperience())
+        self.assertEquals(0, player.getExperience())
         player.setExperience(player.getRequiredExp() + 10)
         self.assertEquals(player.getRequiredExp() + 10, player.getExperience())
         self.assertEquals(True, player.checkLevelUp())
