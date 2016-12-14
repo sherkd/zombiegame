@@ -1,5 +1,5 @@
 from django.test import TestCase
-from weapon import Weapon
+from game.classes.weapon import Weapon
 
 class Enemy(object):
     
