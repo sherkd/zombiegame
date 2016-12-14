@@ -25,4 +25,5 @@ class Groupfight(object):
                 self.player.removeCooldown("groupfight")
             elif self.player4.health <= 0 or self.player5.health <= 0 or self.player6.health:
                 self.player3.removeCooldown("groupfight")
-        pass
+        pass 
+     
