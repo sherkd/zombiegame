@@ -7,27 +7,25 @@ class tournament(object):
         self.enemy = enemy
         self.counter = counter
 
-    def getPlayer(self):
-        return self.player
+    def flee(self):
+        self.player.removeCooldown("Tournament")
 
-    def getEnemy(self):
-        return self.enemy
-
-    def getCounter(self):
-        return self.counter
+    def Attack(self):
+        if self.player.addCooldown("Tournament"):
+            self.enemy.health - (self.player.attack + self.player.currentweapon.getDamage())
 
     def startTournament(self):
         self.player.addCooldown("Tournament")
         while len(self.player.getCooldowns()) == 1:
             if self.player.health <= 0:
-                self.player.removeCooldown("Tournament")
+               self.player.removeCooldown("Tournament")
             elif self.enemy.health <= 0:
-                self.player.removeCooldown("Tournament")
-                self.counter -= 1
-                if self.counter == 0:
-                    pass
-                else:    
-                    startTournament(self)
+               self.player.removeCooldown("Tournament")
+               self.counter -= 1
+               if self.counter == 0:
+                   pass
+               else:    
+                   startTournament(self)
 
                 
 

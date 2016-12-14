@@ -7,11 +7,6 @@ class PlayerVsPlayerLevel(object):
         self.player = player
         self.player2 = player2
 
-    def getPlayer(self):
-        return self.player
-
-    def getPlayer2(self):
-        return self.player2
 
     def startBattle(self):
         self.player.addCooldown("Battle")
