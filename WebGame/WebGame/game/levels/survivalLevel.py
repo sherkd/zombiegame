@@ -28,7 +28,7 @@ class Survival(object):
     def getEnemy(self):
         return self.enemy
 
-    def oneWave(self):
+    def startOneWave(self):
         if self.player.health > 0 and self.player.health >= self.damage:
             self.player.setHealth(self.player.getHealth() - self.damage)
             self.setWaveCounter(self.getWaveCounter() + 1)
@@ -72,22 +72,22 @@ class TestSurvival(TestCase):
 
         self.assertEquals(1, surv.getWaveCounter())
 
-        surv.oneWave()
+        surv.startOneWave()
 
         self.assertEquals(2, surv.getWaveCounter())
         self.assertEquals(90, surv.player.getHealth())
 
-        surv.oneWave()
+        surv.startOneWave()
 
         self.assertEquals(3, surv.getWaveCounter())
         self.assertEquals(70, surv.player.getHealth())
 
-        surv.oneWave()
+        surv.startOneWave()
 
         self.assertEquals(4, surv.getWaveCounter())
         self.assertEquals(40, surv.player.getHealth())
 
-        surv.oneWave()
+        surv.startOneWave()
 
         self.assertEquals(5, surv.getWaveCounter())
         self.assertEquals(0, surv.player.getHealth())
