@@ -9,8 +9,7 @@ class Groupfight(object):
         self.player = player4
         self.player = player5
         self.player = player6
-        self.team1 = [player, player2, player3]
-        self.team2 = [player4, player5, player6]
+
 
 
     def startBattle(self):

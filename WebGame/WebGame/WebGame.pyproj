@@ -39,6 +39,9 @@
     <Compile Include="game\database\postgres.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="game\levels\heist.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="game\levels\survivalLevel.py">
       <SubType>Code</SubType>
     </Compile>
