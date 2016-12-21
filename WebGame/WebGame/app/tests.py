@@ -23,16 +23,6 @@ class ViewTest(TestCase):
         response = self.client.get('/')
         self.assertContains(response, 'Home Page', 1, 200)      
 
-    def test_contact(self):
-        """Tests the contact page."""
-        response = self.client.get('/contact')
-        self.assertContains(response, 'Contact', 3, 200)
-
-    def test_about(self):
-        """Tests the about page."""
-        response = self.client.get('/about')
-        self.assertContains(response, 'About', 3, 200)
-
     def test_survival(self):
         """Tests the survival page."""
         response = self.client.get('/survival')
@@ -46,7 +36,7 @@ class ViewTest(TestCase):
     def test_groupfight(self):
         """Tests the recovery page."""
         response = self.client.get('/groupfight')
-        self.assertContains(response, 'Groupfight', 3, 200)
+        self.assertContains(response, 'Groupfight', 1, 200)
 
     def test_fight(self):
         """Tests the fight page."""
