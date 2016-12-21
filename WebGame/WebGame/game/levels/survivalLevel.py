@@ -1,6 +1,7 @@
 from django.test import TestCase
 from game.classes.player import Player
 from game.classes.enemy import Enemy
+import random
 
 class Survival(object):
     """description of bank."""
@@ -29,12 +30,13 @@ class Survival(object):
         return self.enemy
 
     def startOneWave(self):
-        if self.player.health > 0 and self.player.health >= self.damage:
+        if self.player.health > 0:
             self.player.setHealth(self.player.getHealth() - self.damage)
             self.setWaveCounter(self.getWaveCounter() + 1)
-            self.setDamage(self.getDamage() + 10)                 
+            self.setDamage(self.getDamage() + 10)
+            #randint(1,10)
         else:
-            pass
+            print("You are dead")
 
     def startWaves(self):
         damage = 10
@@ -57,7 +59,6 @@ class Survival(object):
                 damage = damage + 10
                 #startWaves()
                 
-
 
 class TestSurvival(TestCase):
 

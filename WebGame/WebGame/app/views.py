@@ -45,40 +45,40 @@ def about(request):
         }
     )
 
-def shop(request):
-    """Renders the shop page."""
+def survival(request):
+    """Renders the survival page."""
     assert isinstance(request, HttpRequest)
     return render(
         request,
-        'app/shop.html',
+        'app/survival.html',
         {
-            'title':'Shop',
+            'title':'Survival',
             'message':'This page is a blank template.',
             'year':datetime.now().year,
         }
     )
 
-def bank(request):
-    """Renders the bank page."""
+def tournament(request):
+    """Renders the tournament page."""
     assert isinstance(request, HttpRequest)
     return render(
         request,
-        'app/bank.html',
+        'app/tournament.html',
         {
-            'title':'Bank',
+            'title':'Tournament',
             'message':'This page is a blank template.',
             'year':datetime.now().year,
         }
     )
 
-def recovery(request):
-    """Renders the recovery page."""
+def groupfight(request):
+    """Renders the groupfight page."""
     assert isinstance(request, HttpRequest)
     return render(
         request,
-        'app/recovery.html',
+        'app/groupfight.html',
         {
-            'title':'Health Recovery',
+            'title':'Group fight',
             'message':'This page is a blank template.',
             'year':datetime.now().year,
         }
