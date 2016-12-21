@@ -21,5 +21,5 @@ if __name__ == "__main__":
 
 class TestDatabase(TestCase):
 
-        def testPostgres(self):
-            main()
+    def testPostgres(self):
+        main()
