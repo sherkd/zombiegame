@@ -2,7 +2,7 @@ from django.test import TestCase
 
 class Player(object):
 
-    def __init__(self, username, health, attack, cooldowns, money, items, weapons, level, experience, balance):
+    def __init__(self, username, health, attack, cooldowns, money, items, weapons, level, experience, balance, equipedWeapon):
         self.username = username
         self.health = health
         self.attack = attack
@@ -13,6 +13,7 @@ class Player(object):
         self.level = level
         self.experience = experience
         self.balance = balance
+        self.equipedWeapon = equipedWeapon
 
     def getUserName(self):
         return self.username
@@ -83,6 +84,12 @@ class Player(object):
     def getRequiredExp(self):
         return self.level * 140
 
+    def getEquipedWeapon(self):
+        return self.equipedWeapon
+
+    def setEquipedWeapon(self, weapon):
+        self.equipedWeapon = weapon
+
     def checkLevelUp(self):
         if self.experience >= self.getRequiredExp():
             self.increaseLevel()
@@ -95,7 +102,7 @@ class Player(object):
 class ClassTest(TestCase):  
     
     def testPlayer(self):      
-        player = Player("P", 100, 10, ["cooldown1", "cooldown2"], 100, ["item1", "item2"], 10, 10, 0, 0)
+        player = Player("P", 100, 10, ["cooldown1", "cooldown2"], 100, ["item1", "item2"], 10, 10, 0, 0, 1)
         self.assertEquals("P", player.getUserName())
 
         self.assertEquals(100, player.getHealth())

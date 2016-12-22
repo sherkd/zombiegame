@@ -57,7 +57,7 @@ class SearchLevel(object):
 class TestSearch(TestCase):
 
     def testSearch(self):
-        search = SearchLevel(Player("name", 100, 10, ["cl"], 50, ["items"], 1, 20, 0, 0), 2)
+        search = SearchLevel(Player("name", 100, 10, ["cl"], 50, ["items"], 1, 20, 0, 0, 1), 2)
         self.assertEquals("name", search.getPlayer().getUserName())
         search.startScouting()
         self.assertEquals(["cl", "scouting"], search.getPlayer().getCooldowns())

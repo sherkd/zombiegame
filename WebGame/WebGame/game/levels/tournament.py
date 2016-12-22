@@ -57,7 +57,7 @@ class TestTournament(TestCase):
         enemy1 = Enemy("drakenslachter010", 13, 240, Weapon("waterpistool", 20, 300), None)
         enemy2 = Enemy("oreobakker12", 5, 160, Weapon("botermes", 10, 70), None)
         enemy3 = Enemy("swaggerboy111", 7, 180, Weapon("minigun", 30, 400), None)
-        player1 = Player("bamboeknul69", 300, 70, [], 100, ["legendarische steekmes"], 10, 9000, 0, 0)
+        player1 = Player("bamboeknul69", 300, 70, [], 100, ["legendarische steekmes"], 10, 9000, 0, 0, 1)
 
         tournament = Tournament(player1, enemy3, 3)
         self.assertEquals(3, tournament.counter)   #ivm recursieve functie is vanaf hier ***

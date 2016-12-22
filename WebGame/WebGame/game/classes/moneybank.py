@@ -28,8 +28,8 @@ class Bank(object):
 class TestBank(TestCase):
 
     def testBank(self):
-        #Player(username, health, attack, cooldowns, money, items, weapons, level, experience, balance)
-        bank = Bank(Player("name", 100, 10, ["cl"], 50, ["items"], 1, 20, 0, 0))      
+        #Player(username, health, attack, cooldowns, money, items, weapons, level, experience, balance, weapon)
+        bank = Bank(Player("name", 100, 10, ["cl"], 50, ["items"], 1, 20, 0, 0, 1))      
         
         self.assertEquals(0, bank.player.getBalance())
         bank.depositMoney(10)
