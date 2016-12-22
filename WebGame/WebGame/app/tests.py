@@ -23,30 +23,20 @@ class ViewTest(TestCase):
         response = self.client.get('/')
         self.assertContains(response, 'Home Page', 1, 200)      
 
-    def test_contact(self):
-        """Tests the contact page."""
-        response = self.client.get('/contact')
-        self.assertContains(response, 'Contact', 3, 200)
+    def test_survival(self):
+        """Tests the survival page."""
+        response = self.client.get('/survival')
+        self.assertContains(response, 'Survival', 3, 200)
 
-    def test_about(self):
-        """Tests the about page."""
-        response = self.client.get('/about')
-        self.assertContains(response, 'About', 3, 200)
-
-    def test_shop(self):
-        """Tests the shop page."""
-        response = self.client.get('/shop')
-        self.assertContains(response, 'Shop', 3, 200)
-
-    def test_bank(self):
-        """Tests the bank page."""
-        response = self.client.get('/bank')
-        self.assertContains(response, 'Bank', 3, 200)
+    def test_tournament(self):
+        """Tests the tournament page."""
+        response = self.client.get('/tournament')
+        self.assertContains(response, 'Tournament', 3, 200)
         
-    def test_recovery(self):
+    def test_groupfight(self):
         """Tests the recovery page."""
-        response = self.client.get('/recovery')
-        self.assertContains(response, 'Recovery', 3, 200)
+        response = self.client.get('/groupfight')
+        self.assertContains(response, 'Groupfight', 1, 200)
 
     def test_fight(self):
         """Tests the fight page."""

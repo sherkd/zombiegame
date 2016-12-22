@@ -34,6 +34,10 @@ class Enemy(object):
     def getRewardItem(self):
         return self.rewardItem
 
+    def getRandomEnemy(player):
+        """TODO: generate a random enemy depending on your level."""
+        pass
+
 class TestEnemy(TestCase):
 
     def testEnemy(self):

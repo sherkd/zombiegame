@@ -19,66 +19,40 @@ def home(request):
         }
     )
 
-def contact(request):
-    """Renders the contact page."""
+def survival(request):
+    """Renders the survival page."""
     assert isinstance(request, HttpRequest)
     return render(
         request,
-        'app/contact.html',
+        'app/survival.html',
         {
-            'title':'Contact',
-            'message':'Your contact page.',
-            'year':datetime.now().year,
-        }
-    )
-
-def about(request):
-    """Renders the about page."""
-    assert isinstance(request, HttpRequest)
-    return render(
-        request,
-        'app/about.html',
-        {
-            'title':'About',
-            'message':'Your application description page.',
-            'year':datetime.now().year,
-        }
-    )
-
-def shop(request):
-    """Renders the shop page."""
-    assert isinstance(request, HttpRequest)
-    return render(
-        request,
-        'app/shop.html',
-        {
-            'title':'Shop',
+            'title':'Survival',
             'message':'This page is a blank template.',
             'year':datetime.now().year,
         }
     )
 
-def bank(request):
-    """Renders the bank page."""
+def tournament(request):
+    """Renders the tournament page."""
     assert isinstance(request, HttpRequest)
     return render(
         request,
-        'app/bank.html',
+        'app/tournament.html',
         {
-            'title':'Bank',
+            'title':'Tournament',
             'message':'This page is a blank template.',
             'year':datetime.now().year,
         }
     )
 
-def recovery(request):
-    """Renders the recovery page."""
+def groupfight(request):
+    """Renders the groupfight page."""
     assert isinstance(request, HttpRequest)
     return render(
         request,
-        'app/recovery.html',
+        'app/groupfight.html',
         {
-            'title':'Health Recovery',
+            'title':'Group fight',
             'message':'This page is a blank template.',
             'year':datetime.now().year,
         }
