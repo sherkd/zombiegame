@@ -1,8 +1,17 @@
-from django.test import TestCase
+
+"""
+database = Postgres()
+print(database.getConnection())
+database.insertAccount()
+database.insertTestPlayer()
+print(database.getAccount())
+print(database.getTestPlayer())
+"""
 
 class Player(object):
 
-    def __init__(self, username, health, attack, cooldowns, money, items, weapons, level, experience, balance, equipedWeapon):
+    def __init__(self, id, username, health, attack, cooldowns, money, items, weapons, level, experience, balance, equipedWeapon):
+        self.id = id
         self.username = username
         self.health = health
         self.attack = attack
@@ -61,7 +70,10 @@ class Player(object):
         return self.weapons
 
     def removeWeapon(self, weapon):
-        self.weapons.remove(weapon)
+        for wep in self.getWeapons():
+            if wep.getName() == weapon.getName() and wep.getValue() == weapon.getValue() and wep.getDamage() == weapon.getDamage():
+                self.weapons.remove(wep)
+                break
 
     def addWeapon(self, weapon):
         self.weapons.append(weapon)
@@ -88,7 +100,9 @@ class Player(object):
         return self.equipedWeapon
 
     def setEquipedWeapon(self, weapon):
+        self.addWeapon(self.getEquipedWeapon())
         self.equipedWeapon = weapon
+        self.removeWeapon(weapon)
 
     def checkLevelUp(self):
         if self.experience >= self.getRequiredExp():
@@ -97,55 +111,4 @@ class Player(object):
             return True
         return False
 
-
     
-class ClassTest(TestCase):  
-    
-    def testPlayer(self):      
-        player = Player("P", 100, 10, ["cooldown1", "cooldown2"], 100, ["item1", "item2"], 10, 10, 0, 0, 1)
-        self.assertEquals("P", player.getUserName())
-
-        self.assertEquals(100, player.getHealth())
-        player.setHealth(50)
-        self.assertEquals(50, player.getHealth())       
-
-        self.assertEquals(10, player.getAttackDamage())
-        player.setAttackDamage(12)
-        self.assertEquals(12, player.getAttackDamage())
-
-        self.assertEquals(["cooldown1", "cooldown2"], player.getCooldowns())
-        player.addCooldown("cooldown3")
-        self.assertEquals(["cooldown1", "cooldown2", "cooldown3"],  player.getCooldowns())
-        player.removeCooldown("cooldown2")
-        self.assertEquals(["cooldown1", "cooldown3"],  player.getCooldowns())
-
-        self.assertEquals(100, player.getMoney()) 
-        player.setMoney(50)
-        self.assertEquals(50, player.getMoney()) 
-
-        self.assertEquals(["item1", "item2"], player.getItems())
-        player.addItem("item3")
-        self.assertEquals(["item1", "item2", "item3"], player.getItems())
-        player.removeItem("item3") 
-        self.assertEquals(["item1", "item2"], player.getItems())
-
-        self.assertEquals(10, player.getLevel())
-        player.increaseLevel()
-        self.assertEquals(11, player.getLevel())
-
-        self.assertEquals(0, player.getExperience())
-        player.setExperience(player.getRequiredExp() + 10)
-        self.assertEquals(player.getRequiredExp() + 10, player.getExperience())
-        self.assertEquals(True, player.checkLevelUp())
-        self.assertEquals(12, player.getLevel())
-        self.assertEquals(130, player.getExperience())
-
-        self.assertEquals(0, player.getBalance())
-        player.setBalance(10)
-        self.assertEquals(10, player.getBalance())
-
-     
-
-        
-
-

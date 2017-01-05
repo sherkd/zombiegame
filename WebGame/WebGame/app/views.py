@@ -79,7 +79,7 @@ def quest(request):
         'app/quest.html',
         {
             'title':'Quest',
-            'message':'This page is a blank template.',
+            'message':'Start a quest here.',
             'year':datetime.now().year,
         }
     )

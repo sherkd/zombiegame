@@ -60,36 +60,3 @@ class Survival(object):
                 #startWaves()
                 
 
-class TestSurvival(TestCase):
-
-    def testSurvival(self):
-        #Player(username, health, attack, cooldowns, money, items, weapons, level, experience, balance)
-        surv = Survival(Player("name", 100, 10, ["cl"], 50, ["items"], 1, 20, 0, 0, 1), 1, 10)
-
-        #Enemy(name, level, health, weapon, rewardItem)
-        #en = Enemy("Henk", 3, 100, Weapon("Henk weapon", 5, 100), None)
-
-        self.assertEquals(100, surv.player.getHealth())
-
-        self.assertEquals(1, surv.getWaveCounter())
-
-        surv.startOneWave()
-
-        self.assertEquals(2, surv.getWaveCounter())
-        self.assertEquals(90, surv.player.getHealth())
-
-        surv.startOneWave()
-
-        self.assertEquals(3, surv.getWaveCounter())
-        self.assertEquals(70, surv.player.getHealth())
-
-        surv.startOneWave()
-
-        self.assertEquals(4, surv.getWaveCounter())
-        self.assertEquals(40, surv.player.getHealth())
-
-        surv.startOneWave()
-
-        self.assertEquals(5, surv.getWaveCounter())
-        self.assertEquals(0, surv.player.getHealth())
-

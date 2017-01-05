@@ -1,5 +1,3 @@
-from django.test import TestCase
-from game.classes.player import Player
 
 class Bank(object):
     """description of bank."""
@@ -25,13 +23,3 @@ class Bank(object):
         else:
             print("Not enough money")
 
-class TestBank(TestCase):
-
-    def testBank(self):
-        #Player(username, health, attack, cooldowns, money, items, weapons, level, experience, balance, weapon)
-        bank = Bank(Player("name", 100, 10, ["cl"], 50, ["items"], 1, 20, 0, 0, 1))      
-        
-        self.assertEquals(0, bank.player.getBalance())
-        bank.depositMoney(10)
-        self.assertEquals(40, bank.player.getMoney())
-        self.assertEquals(10, bank.player.getBalance())
